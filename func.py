@@ -32,7 +32,7 @@ def sorted_by_executed_and_date(data_json):
 def formatted_date(transaction_data):
     """
     Приводит дату к нужному виду
-    :param transaction_data: библиотека с информацией о транзакции
+    :param transaction_data: словарь с информацией о транзакции
     :return: дата в подходящем формате
     """
     date_operation = transaction_data.get('date')
@@ -45,7 +45,7 @@ def formatted_date(transaction_data):
 def get_description(transaction_data):
     """
     Возвращает описание операции
-    :param transaction_data: библиотека с информацией о транзакции
+    :param transaction_data: словарь с информацией о транзакции
     :return: описание произведенной операции
     """
     description = transaction_data.get('description')
@@ -55,7 +55,7 @@ def get_description(transaction_data):
 def get_sender(transaction_data):
     """
     Возвращает информацию о платежной системе и номер счета отправителе"
-    :param transaction_data: библиотека с информацией о транзакции
+    :param transaction_data: словарь с информацией о транзакции
     :return: название платежной системы и номер счета отправителя
     """
     sender = transaction_data.get('from')
@@ -69,7 +69,7 @@ def get_sender(transaction_data):
 def get_recipient(transaction_data):
     """
     Возвращает номер счета получателя
-    :param transaction_data: библиотека с информацией о транзакции
+    :param transaction_data: словарь с информацией о транзакции
     :return: номер счета получателя
     """
     resipient = transaction_data.get("to")
@@ -79,7 +79,7 @@ def get_recipient(transaction_data):
 def get_transfer_amount(transaction_data):
     """
     Возвращает сумму перевода
-    :param transaction_data: библиотека с информацией о транзакции
+    :param transaction_data: словарь с информацией о транзакции
     :return: сумма перевода
     """
     transfer_amount = transaction_data['operationAmount'].get("amount")
@@ -89,7 +89,7 @@ def get_transfer_amount(transaction_data):
 def get_currency(transaction_data):
     """
     Возвращает валюту совершенной операции
-    :param transaction_data: библиотека с информацией о транзакции
+    :param transaction_data: словарь с информацией о транзакции
     :return: валюта совершенной операции
     """
     currency = transaction_data['operationAmount']['currency'].get('name')
